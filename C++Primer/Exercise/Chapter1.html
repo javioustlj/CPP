@@ -1,0 +1,406 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chapter 1 Getting started &mdash; Leanring CPP  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Chapert 7 Classes" href="Chapter7.html" />
+    <link rel="prev" title="Exercise" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Leanring CPP
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">C++Primer</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Exercise</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Chapter 1 Getting started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Chapter7.html">Chapert 7 Classes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Leanring CPP</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">C++Primer</a> &raquo;</li>
+        
+          <li><a href="index.html">Exercise</a> &raquo;</li>
+        
+      <li>Chapter 1 Getting started</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/C++Primer/Exercise/Chapter1.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="chapter-1-getting-started">
+<h1>Chapter 1 Getting started<a class="headerlink" href="#chapter-1-getting-started" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic simple">
+<li><p>Review the documentation for your complier and determine what file naming convention it uses. Compile and run the
+<code class="docutils literal notranslate"><span class="pre">main</span></code> program from page 2.</p></li>
+</ol>
+<blockquote>
+<div><p>C++ source files conventionally use one of the suffixes ‘.C’ , ‘.cc’ , ‘.cpp’ , ‘CPP’ , ‘.c++’, ‘.cp’ , or ‘.cxx’ ; C++
+header files often use ‘.hh’ , ‘.hpp’ , ‘.H’ , or (for shared template code) ‘.tcc’ ; and preprocessed C++ files use the
+suffix ‘.ii’. GCC recognizes files with these names and compiles them as C++ programs even if you call the compiler the
+same way as for compiling C programs (usually with the name gcc).</p>
+<p><a class="reference external" href="https://gcc.gnu.org/onlinedocs/gcc-9.2.0/gcc/Invoking-G_002b_002b.html#Invoking-G_002b_002b">https://gcc.gnu.org/onlinedocs/gcc-9.2.0/gcc/Invoking-G_002b_002b.html#Invoking-G_002b_002b</a></p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Change the program to return -1. A return value of -1 is often treated as an indicator that the program failed.
+Recompile and return your program to see how your system treats a failure indicator from main.</p></li>
+</ol>
+<blockquote>
+<div><p>This is in windows cmd:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>c:\my\learning\C++Primer\Exercise\code\Chapter1&gt;a.exe
+c:\my\learning\C++Primer\Exercise\code\Chapter1&gt;echo %ERRORLEVEL%
+-1
+c:\my\learning\C++Primer\Exercise\code\Chapter1&gt;
+</pre></div>
+</div>
+<p>This is in windows powershell:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>PS C:\my\learning\C++Primer\Exercise\code\Chapter1&gt; .\a.exe
+PS C:\my\learning\C++Primer\Exercise\code\Chapter1&gt; $?
+False
+PS C:\my\learning\C++Primer\Exercise\code\Chapter1&gt; $LASTEXITCODE
+-1
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>Write a program to print Hello, World on the standard output.</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello, World&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>Our program used the addition operator, +, to add two numbers. Write a program that uses the multiplication
+operator, *, to print the product instead.</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+ <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+ <span class="p">{</span>
+     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+ <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>We wrote the output in one large statement. Rewrite the program to use a separate statement to print each operand.</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+ <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+ <span class="p">{</span>
+     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Enter two numbers:&quot;</span><span class="p">;</span>
+     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+     <span class="kt">int</span> <span class="n">v1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">v2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+     <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">v1</span> <span class="o">&gt;&gt;</span> <span class="n">v2</span><span class="p">;</span>
+     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;The sum of &quot;</span><span class="p">;</span>
+     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v1</span><span class="p">;</span>
+     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; and &quot;</span><span class="p">;</span>
+     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v2</span><span class="p">;</span>
+     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; is &quot;</span><span class="p">;</span>
+     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v1</span> <span class="o">+</span> <span class="n">v2</span><span class="p">;</span>
+     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+ <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+<ol class="arabic" start="6">
+<li><p>Explain whether the following program fragment is legal.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;The sum of &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">v1</span><span class="p">;</span>
+          <span class="o">&lt;&lt;</span> <span class="s">&quot; and &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">v2</span><span class="p">;</span>
+          <span class="o">&lt;&lt;</span> <span class="s">&quot; is &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">v1</span> <span class="o">+</span> <span class="n">v2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>If the program is legal, what does it do? If the program is not legal, why not? How would you fix it?</p>
+<p>The program is not legal; because semicolon halt <code class="docutils literal notranslate"><span class="pre">std::cout</span> <span class="pre">&lt;&lt;</span> <span class="pre">&quot;The</span> <span class="pre">sum</span> <span class="pre">of</span> <span class="pre">&quot;</span> <span class="pre">&lt;&lt;</span> <span class="pre">v1;</span></code> , so for code in second line,
+“&lt;&lt;” doesn’t have left operand. It is not a legal statement.</p>
+</li>
+</ol>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;The sum of &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">v1</span>
+          <span class="o">&lt;&lt;</span> <span class="s">&quot; and &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">v2</span>
+          <span class="o">&lt;&lt;</span> <span class="s">&quot; is &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">v1</span> <span class="o">+</span> <span class="n">v2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>Compile a program that has incorrectly nested comments.</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span> /* comment pairs /*    */ cannot nest.
+  * &quot;cannot nest&quot; is considered source code
+  * as is the rest of the program
+  */
+ int main()
+ {
+     return 0;
+ }
+</pre></div>
+</td></tr></table></div>
+<p>Compiled by g++ in Windows:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>PS C:\my\learning\C++Primer\Exercise\code\Chapter1&gt; g++ .\1_7.cpp -Wall
+.\1_7.cpp:1:18: warning: &quot;/*&quot; within comment [-Wcomment]
+    1 | /* comment pairs /*    */ cannot nest.
+      |
+.\1_7.cpp:1:27: error: &#39;cannot&#39; does not name a type
+    1 | /* comment pairs /*    */ cannot nest.
+      |                           ^~~~~~
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic" start="8">
+<li><p>Indicate which, if any, of the following output statements are legal:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>std::cout &lt;&lt; &quot;/*&quot;;
+std::cout &lt;&lt; &quot;*/&quot;;
+std::cout &lt;&lt; /* &quot;*/&quot; */;
+std::cout &lt;&lt; /* &quot;*/&quot; /*  &quot;/*&quot;  */;
+</pre></div>
+</div>
+<p>After you’ve predicted what will happen test your answers by compiling a program with each of these statements. Correct
+any errors you encounter.</p>
+</li>
+</ol>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;/*&quot;</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;*/&quot;</span><span class="p">;</span>
+    <span class="c1">//std::cout &lt;&lt; /* &quot;*/&quot; */; This failed.</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="cm">/* &quot;*/</span><span class="s">&quot; /*  &quot;</span><span class="cm">/*&quot;  */</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div></blockquote>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Chapter7.html" class="btn btn-neutral float-right" title="Chapert 7 Classes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Exercise" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Javious
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,479 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chapert 7 Classes &mdash; Leanring CPP  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Chapter 1 Getting started" href="Chapter1.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Leanring CPP
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">C++Primer</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Chapter1.html">Chapter 1 Getting started</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Chapert 7 Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#exercises-section-7-1-1">Exercises Section 7.1.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises-section-7-1-2">Exercises Section 7.1.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises-section-7-1-3">Exercises Section 7.1.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises-section-7-1-4">Exercises Section 7.1.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises-section-7-2">Exercises Section 7.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises-section-7-2-1">Exercises Section 7.2.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises-section-7-3-1">Exercises Section 7.3.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises-section-7-3-2">Exercises Section 7.3.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises-section-7-3-3">Exercises Section 7.3.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises-section-7-3-4">Exercises Section 7.3.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises-section-7-4">Exercises Section 7.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises-section-7-4-1">Exercises Section 7.4.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises-section-7-5-1">Exercises Section 7.5.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises-section-7-5-2">Exercises Section 7.5.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises-section-7-5-3">Exercises Section 7.5.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises-section-7-5-4">Exercises Section 7.5.4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises-section-7-5-5">Exercises Section 7.5.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises-section-7-5-6">Exercises Section 7.5.6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exercises-section-7-6">Exercises Section 7.6</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Leanring CPP</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">C++Primer</a> &raquo;</li>
+        
+          <li><a href="index.html">&lt;no title&gt;</a> &raquo;</li>
+        
+      <li>Chapert 7 Classes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/C++Primer/Exercise/Chapter7.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="chapert-7-classes">
+<h1>Chapert 7 Classes<a class="headerlink" href="#chapert-7-classes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="exercises-section-7-1-1">
+<h2>Exercises Section 7.1.1<a class="headerlink" href="#exercises-section-7-1-1" title="Permalink to this headline">¶</a></h2>
+<p>7.1 Write a version of the transaction-processing program from 1.6 (p. 24) using the <code class="docutils literal notranslate"><span class="pre">Sales_data</span></code> class you defined for
+the exercises in 2.6.1 (p. 72).</p>
+</div>
+<div class="section" id="exercises-section-7-1-2">
+<h2>Exercises Section 7.1.2<a class="headerlink" href="#exercises-section-7-1-2" title="Permalink to this headline">¶</a></h2>
+<p>7.2 Add the <code class="docutils literal notranslate"><span class="pre">combine</span></code> and <code class="docutils literal notranslate"><span class="pre">isbn</span></code> members to the <code class="docutils literal notranslate"><span class="pre">Sales_data</span></code> class you wrote for the exercises in 2.6.2 (p. 76).</p>
+<p>7.3 Revise your transaction-processing program from 7.1.1 (p.256) to use these members.</p>
+<p>7.4 Write a class named <code class="docutils literal notranslate"><span class="pre">Person</span></code> that represents the name and address of a person. Use a <code class="docutils literal notranslate"><span class="pre">string</span></code> to hold each of
+these elements. Subsequent exercises will incrementally add features to this class.</p>
+<p>7.5 Provide operations in your <code class="docutils literal notranslate"><span class="pre">Person</span></code> class to return the name and address. Should these functions be <code class="docutils literal notranslate"><span class="pre">const</span></code>?
+Explain your choice.</p>
+</div>
+<div class="section" id="exercises-section-7-1-3">
+<h2>Exercises Section 7.1.3<a class="headerlink" href="#exercises-section-7-1-3" title="Permalink to this headline">¶</a></h2>
+<p>7.6 Define your own versions of the <code class="docutils literal notranslate"><span class="pre">add</span></code>, <code class="docutils literal notranslate"><span class="pre">read</span></code>, and <code class="docutils literal notranslate"><span class="pre">print</span></code> functions.</p>
+<p>7.7 Rewrite the transaction-processing program you wrote for the exercises in 7.1.2 (P.260) to use the new functions.</p>
+<p>7.8 Why does <code class="docutils literal notranslate"><span class="pre">read</span></code> define its <code class="docutils literal notranslate"><span class="pre">Sales_data</span></code> parameters as a plain reference and <code class="docutils literal notranslate"><span class="pre">print</span></code> define its parameter as a
+reference to <code class="docutils literal notranslate"><span class="pre">const</span></code>?</p>
+<p>7.9 Add operations to read and print <code class="docutils literal notranslate"><span class="pre">Person</span></code> objects to the code you wrote for the exercise in 7.1.2 (p.260).</p>
+<p>7.10 What does the condition in the following <code class="docutils literal notranslate"><span class="pre">if</span></code> statement do?</p>
+<p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">(read(read(cin,</span> <span class="pre">data1),</span> <span class="pre">data2))</span></code></p>
+</div>
+<div class="section" id="exercises-section-7-1-4">
+<h2>Exercises Section 7.1.4<a class="headerlink" href="#exercises-section-7-1-4" title="Permalink to this headline">¶</a></h2>
+<p>7.11 Add constructors to your <code class="docutils literal notranslate"><span class="pre">Sales_data</span></code> class and write a program to use each of the constructors.</p>
+<p>7.12 Move the definition of the <code class="docutils literal notranslate"><span class="pre">Sales_data</span></code> constructor that takes an <code class="docutils literal notranslate"><span class="pre">istream</span></code> into the body of the <code class="docutils literal notranslate"><span class="pre">Sales_data</span></code>
+class.</p>
+<p>7.13 Rewrite the program from page 255 to use the <code class="docutils literal notranslate"><span class="pre">istream</span></code> constructor.</p>
+<p>7.14 Write a version of the default constructor that explicitly initializes the members to the values we have provided
+as in-class initializes.</p>
+<p>7.15 Add appropriate constructors to your <code class="docutils literal notranslate"><span class="pre">Person</span></code> class.</p>
+</div>
+<div class="section" id="exercises-section-7-2">
+<h2>Exercises Section 7.2<a class="headerlink" href="#exercises-section-7-2" title="Permalink to this headline">¶</a></h2>
+<p>7.16 What, if any, are the constraints on where and how often an access specifier may appear inside a class definition?
+What kinds of members should be defined after a public specifier? What kinds should be private?</p>
+<p>7.17 What, if any, are the difference between using <code class="docutils literal notranslate"><span class="pre">class</span></code> or <code class="docutils literal notranslate"><span class="pre">struct</span></code>?</p>
+<p>7.18 What is encapsulation? Why is it useful?</p>
+<p>7.19 Indicate which members of your <code class="docutils literal notranslate"><span class="pre">Person</span></code> class you would declare as public and which you would declare as private.
+Explain your choice.</p>
+</div>
+<div class="section" id="exercises-section-7-2-1">
+<h2>Exercises Section 7.2.1<a class="headerlink" href="#exercises-section-7-2-1" title="Permalink to this headline">¶</a></h2>
+<p>7.20 When are friends useful? Discuss the pros and cons of using friends.</p>
+<p>7.21 Update your <code class="docutils literal notranslate"><span class="pre">Sales_data</span></code> class to hide its implementation. The programs you’ve written to use <code class="docutils literal notranslate"><span class="pre">Sales_data</span></code>
+operations should still continue to work. Recompile those programs with your new class definition to verify that they
+still work.</p>
+<p>7.22 Update your <code class="docutils literal notranslate"><span class="pre">Person</span></code> class to hide its implementation.</p>
+</div>
+<div class="section" id="exercises-section-7-3-1">
+<h2>Exercises Section 7.3.1<a class="headerlink" href="#exercises-section-7-3-1" title="Permalink to this headline">¶</a></h2>
+<p>7.23 Write your own version of the <code class="docutils literal notranslate"><span class="pre">Screen</span></code> class.</p>
+<p>7.24 Give your <code class="docutils literal notranslate"><span class="pre">Screen</span></code> class three constructors: a default constructor; a constructor that takes values for height
+and width and initializes the contents to hold the given number of blanks; and a constructor that takes values for
+height, width, and a character to use as the contents of the screen.</p>
+<p>7.25 Can <code class="docutils literal notranslate"><span class="pre">Screen</span></code> safely rely on the default versions of copy and assignment? If so, why? If not, why not?</p>
+<p>7.26 Define <code class="docutils literal notranslate"><span class="pre">Sales_data::avg_price</span></code> as an <code class="docutils literal notranslate"><span class="pre">inline</span></code> function.</p>
+</div>
+<div class="section" id="exercises-section-7-3-2">
+<h2>Exercises Section 7.3.2<a class="headerlink" href="#exercises-section-7-3-2" title="Permalink to this headline">¶</a></h2>
+<p>7.27 Add the <code class="docutils literal notranslate"><span class="pre">move</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code>, and <code class="docutils literal notranslate"><span class="pre">display</span></code> operations to your version of <code class="docutils literal notranslate"><span class="pre">Screen</span></code>. Test your class by executing the
+following code:</p>
+<blockquote>
+<div><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Screen</span> <span class="nf">myScreen</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="sc">&#39;X&#39;</span><span class="p">);</span>
+<span class="n">myScreen</span><span class="p">.</span><span class="n">move</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">).</span><span class="n">set</span><span class="p">(</span><span class="sc">&#39;#&#39;</span><span class="p">).</span><span class="n">display</span><span class="p">(</span><span class="n">cout</span><span class="p">);</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="n">myScreen</span><span class="p">.</span><span class="n">display</span><span class="p">(</span><span class="n">cout</span><span class="p">);</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>7.28 What would happen in the previous exercises if the return type of move, set, and display was Screen rather than
+Screen&amp;?</p>
+<p>7.29 Revise your <code class="docutils literal notranslate"><span class="pre">Screen</span></code> class so that <code class="docutils literal notranslate"><span class="pre">move</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code>, and <code class="docutils literal notranslate"><span class="pre">display</span></code> functions return <code class="docutils literal notranslate"><span class="pre">Screen</span></code> and check your
+prediction and previous exercise.</p>
+<p>7.30 It is legal but redundant to refer to members through the <code class="docutils literal notranslate"><span class="pre">this</span></code> pointer. Discuss the pros and cons of explicitly
+using the <code class="docutils literal notranslate"><span class="pre">this</span></code> pointer to access members.</p>
+</div>
+<div class="section" id="exercises-section-7-3-3">
+<h2>Exercises Section 7.3.3<a class="headerlink" href="#exercises-section-7-3-3" title="Permalink to this headline">¶</a></h2>
+<p>7.31 Define a pair of classes X and Y, in which X has a pointer to Y, and Y has an object of type X.</p>
+</div>
+<div class="section" id="exercises-section-7-3-4">
+<h2>Exercises Section 7.3.4<a class="headerlink" href="#exercises-section-7-3-4" title="Permalink to this headline">¶</a></h2>
+<p>7.32 Define your own versions of <code class="docutils literal notranslate"><span class="pre">Screen</span></code> and <code class="docutils literal notranslate"><span class="pre">Windo_mgr</span></code> in which <code class="docutils literal notranslate"><span class="pre">clear</span></code> is a member of <code class="docutils literal notranslate"><span class="pre">Window_mgr</span></code> and a
+friend of <code class="docutils literal notranslate"><span class="pre">Screen</span></code>.</p>
+</div>
+<div class="section" id="exercises-section-7-4">
+<h2>Exercises Section 7.4<a class="headerlink" href="#exercises-section-7-4" title="Permalink to this headline">¶</a></h2>
+<p>7.33 What would happen if we gave <code class="docutils literal notranslate"><span class="pre">Screen</span></code> a size member defined as follow? Fix any problem you identify.</p>
+<blockquote>
+<div><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">pos</span> <span class="n">Screen</span><span class="o">::</span><span class="n">size</span><span class="p">()</span> <span class="k">const</span>
+<span class="p">{</span>
+   <span class="k">return</span> <span class="n">height</span> <span class="o">*</span> <span class="n">width</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="exercises-section-7-4-1">
+<h2>Exercises Section 7.4.1<a class="headerlink" href="#exercises-section-7-4-1" title="Permalink to this headline">¶</a></h2>
+<p>7.34 What would happen if we put the <code class="docutils literal notranslate"><span class="pre">typedef</span></code> of <code class="docutils literal notranslate"><span class="pre">pos</span></code> in the <code class="docutils literal notranslate"><span class="pre">Screen</span></code> class on page 285 as the last line in the
+class?</p>
+<p>7.35 Explain the following code, indicating which of <code class="docutils literal notranslate"><span class="pre">Type</span></code> or <code class="docutils literal notranslate"><span class="pre">initVal</span></code> is used for each use of those names. Say
+how you would fix any errors.</p>
+<blockquote>
+<div><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="n">string</span> <span class="n">Type</span><span class="p">;</span>
+<span class="n">Type</span> <span class="nf">initVal</span><span class="p">();</span>
+<span class="k">class</span> <span class="nc">Exercise</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="k">typedef</span> <span class="kt">double</span> <span class="n">Type</span><span class="p">;</span>
+    <span class="n">Type</span> <span class="nf">setVal</span><span class="p">(</span><span class="n">Type</span><span class="p">);</span>
+    <span class="n">Type</span> <span class="nf">initVal</span><span class="p">();</span>
+<span class="k">private</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">val</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="n">Type</span> <span class="n">Exercise</span><span class="o">::</span><span class="n">setVal</span> <span class="p">(</span><span class="n">Type</span> <span class="n">parm</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="n">parm</span> <span class="o">+</span> <span class="n">initVal</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="exercises-section-7-5-1">
+<h2>Exercises Section 7.5.1<a class="headerlink" href="#exercises-section-7-5-1" title="Permalink to this headline">¶</a></h2>
+<p>7.36 The following initializer is in error. Identify and fix the problem.</p>
+<blockquote>
+<div><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">X</span> <span class="p">{</span>
+    <span class="n">X</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">)</span> <span class="o">:</span> <span class="n">base</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">rem</span><span class="p">(</span><span class="n">base</span> <span class="o">%</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">rem</span><span class="p">,</span> <span class="n">base</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>7.37 Using the versions of <code class="docutils literal notranslate"><span class="pre">Sales_data</span></code> from this section, determine which constructor is used to initialize each of
+the following variables and list the values of the data members in each object:</p>
+<blockquote>
+<div><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">Sales_data</span> <span class="nf">first_item</span><span class="p">(</span><span class="n">cin</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Sales_data</span> <span class="n">next</span><span class="p">;</span>
+    <span class="n">Sales_data</span> <span class="n">last</span><span class="p">(</span><span class="s">&quot;9-999-99999-9&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>7.38 We might wat to supply <code class="docutils literal notranslate"><span class="pre">cin</span></code> as a default argument to the constructor that takes an <code class="docutils literal notranslate"><span class="pre">istream&amp;</span></code>. Write the
+constructor declaration that uses <code class="docutils literal notranslate"><span class="pre">cin</span></code> as a default argument.</p>
+<p>7.39 Would it be legal for both constructor that takes a <code class="docutils literal notranslate"><span class="pre">string</span></code> and the one that takes an <code class="docutils literal notranslate"><span class="pre">istream&amp;</span></code> to have
+default arguments? If not, why not?</p>
+<p>7.40 Choose one of the following abstractions ( or an abstraction of your own choosing). Determine what data are needed
+in the class. Provide an appropriate set of constructors. Explain your decisions.</p>
+<p>(a). Book
+(b). Date
+(c). Employee
+(d). Vehicle
+(e). Object
+(f). Tree</p>
+</div>
+<div class="section" id="exercises-section-7-5-2">
+<h2>Exercises Section 7.5.2<a class="headerlink" href="#exercises-section-7-5-2" title="Permalink to this headline">¶</a></h2>
+<p>7.41 Rewrite your own version of the <code class="docutils literal notranslate"><span class="pre">Sales_data</span></code> class to use delegating constructors. Add a statement to the body of
+each of the constructors that prints a message whenever it is executed. Write declaration to construct a <code class="docutils literal notranslate"><span class="pre">Sales_data</span></code>
+object in every way possible. Study the output until you are certain you understand the order of execution among
+delegating constructors.</p>
+<p>7.42 For the class you wrote for exercise 7.40 in 7.5.1 (p.291), decide whether any of the constructors might use
+delegation. If so, write the delegating constructor(s) for your class. If not, look at the list of abstractions and
+choose one that you think would use a delegating constructor. Write the class definition for that abstraction.</p>
+</div>
+<div class="section" id="exercises-section-7-5-3">
+<h2>Exercises Section 7.5.3<a class="headerlink" href="#exercises-section-7-5-3" title="Permalink to this headline">¶</a></h2>
+<p>7.43 Assume we have a class named <code class="docutils literal notranslate"><span class="pre">NoDefault</span></code> that has a constructor that takes an <code class="docutils literal notranslate"><span class="pre">int</span></code>, but has no default
+constructor. Define a class C that has a member of type <code class="docutils literal notranslate"><span class="pre">NoDefault</span></code>. Define the default constructor for C.</p>
+<p>7.44 Is the following declaration legal? If not, why not?</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">vector&lt;NoDefault&gt;</span> <span class="pre">vec(10);</span></code></p>
+</div></blockquote>
+<p>7.45 What if we defined the <code class="docutils literal notranslate"><span class="pre">vector</span></code> in the previous exercise to hold object of type C?</p>
+<p>7.46 Which, if any, of the following statements are untrue? Why?</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>A class must provide at least one constructor.</p></li>
+<li><p>A default constructor is a constructor with an empty parameter list.</p></li>
+<li><p>If there are no meaningful default values for a class, the class should not provide a default constructor.</p></li>
+<li><p>If a class does not define a default constructor, the compiler generates one that initializes each data member to
+the default value of its associated type.</p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="exercises-section-7-5-4">
+<h2>Exercises Section 7.5.4<a class="headerlink" href="#exercises-section-7-5-4" title="Permalink to this headline">¶</a></h2>
+<p>7.47 Explain whether the <code class="docutils literal notranslate"><span class="pre">Sales_data</span></code> constructor that takes a <code class="docutils literal notranslate"><span class="pre">string</span></code> should be explicit. What are the benefits of
+making the constructor <code class="docutils literal notranslate"><span class="pre">explicit</span></code>? What are the drawbacks?</p>
+<p>7.48 Assuming the <code class="docutils literal notranslate"><span class="pre">Sales_data</span></code> constructors are not <code class="docutils literal notranslate"><span class="pre">explicit</span></code>, what operations happen during the following
+definitions</p>
+<blockquote>
+<div><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="nf">null_isbn</span><span class="p">(</span><span class="s">&quot;9-999-99999-9&quot;</span><span class="p">);</span>
+<span class="n">Sales_data</span> <span class="nf">item1</span><span class="p">(</span><span class="n">null_isbn</span><span class="p">);</span>
+<span class="n">Sales_data</span> <span class="nf">item2</span><span class="p">(</span><span class="s">&quot;0-000-00000-0:)</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>What happens if the <code class="docutils literal notranslate"><span class="pre">Sales_data</span></code> constructors are <code class="docutils literal notranslate"><span class="pre">explicit</span></code>?</p>
+<p>7.49 For each of the three following declarations of <code class="docutils literal notranslate"><span class="pre">combine</span></code>, explain what happens if we call <code class="docutils literal notranslate"><span class="pre">i.combine(s)</span></code>,
+where <code class="docutils literal notranslate"><span class="pre">i</span></code> is a <code class="docutils literal notranslate"><span class="pre">Sales_data</span></code> and <code class="docutils literal notranslate"><span class="pre">s</span></code> is a <code class="docutils literal notranslate"><span class="pre">string</span></code>:</p>
+<blockquote>
+<div><p>-a <code class="docutils literal notranslate"><span class="pre">Sales_data</span> <span class="pre">&amp;combine(Sales_data);</span></code>
+-b <code class="docutils literal notranslate"><span class="pre">Sales_data</span> <span class="pre">&amp;combine(Sales_data&amp;);</span></code>
+-c <code class="docutils literal notranslate"><span class="pre">Sales_data</span> <span class="pre">&amp;combine(const</span> <span class="pre">Sales_data&amp;)</span> <span class="pre">const;</span></code></p>
+</div></blockquote>
+<p>7.50 Determine whether any of your <code class="docutils literal notranslate"><span class="pre">Person</span></code> class constructors should be <code class="docutils literal notranslate"><span class="pre">explicit</span></code>.</p>
+<p>7.51 Why do you think <code class="docutils literal notranslate"><span class="pre">vector</span></code> defines its single-argument constructor as <code class="docutils literal notranslate"><span class="pre">explicit</span></code>, but <code class="docutils literal notranslate"><span class="pre">string</span></code> does not?</p>
+</div>
+<div class="section" id="exercises-section-7-5-5">
+<h2>Exercises Section 7.5.5<a class="headerlink" href="#exercises-section-7-5-5" title="Permalink to this headline">¶</a></h2>
+<p>7.52 Using our first version of <code class="docutils literal notranslate"><span class="pre">Sales_data</span></code> from 2.6.1 (p.72), explain the following initialization. Identify and fix
+any problems.</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">Sales_data</span> <span class="pre">item</span> <span class="pre">=</span> <span class="pre">{&quot;978-0590353403&quot;,</span> <span class="pre">25,</span> <span class="pre">15.99};</span></code></p>
+</div></blockquote>
+</div>
+<div class="section" id="exercises-section-7-5-6">
+<h2>Exercises Section 7.5.6<a class="headerlink" href="#exercises-section-7-5-6" title="Permalink to this headline">¶</a></h2>
+<p>7.53 Define your own version of <code class="docutils literal notranslate"><span class="pre">Debug</span></code>.</p>
+<p>7.54 Should the members of <code class="docutils literal notranslate"><span class="pre">Debug</span></code> that begin with <code class="docutils literal notranslate"><span class="pre">set_</span></code> be declared as <code class="docutils literal notranslate"><span class="pre">constexpr</span></code>? If not, why not?</p>
+<p>7.55 IS the <code class="docutils literal notranslate"><span class="pre">Data</span></code> class from 7.55 (p.298) a literal class? If not, why not? If so, explain why it is literal.</p>
+</div>
+<div class="section" id="exercises-section-7-6">
+<h2>Exercises Section 7.6<a class="headerlink" href="#exercises-section-7-6" title="Permalink to this headline">¶</a></h2>
+<p>7.56 What is a <code class="docutils literal notranslate"><span class="pre">static</span></code> a class member? What are the advantages of <code class="docutils literal notranslate"><span class="pre">static</span></code> members? How do they differ from
+ordinary members?</p>
+<p>7.57 Write your own version of the <code class="docutils literal notranslate"><span class="pre">Account</span></code> class.</p>
+<p>7.58 Which, if nay, of the following <code class="docutils literal notranslate"><span class="pre">static</span></code> data member declarations and definitions are errors? Explain why.</p>
+<blockquote>
+<div><div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">//example.h</span>
+<span class="k">class</span> <span class="nc">Example</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="k">static</span> <span class="kt">double</span> <span class="n">rate</span> <span class="o">=</span> <span class="mf">6.5</span><span class="p">;</span>
+    <span class="k">static</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">vecSize</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+    <span class="k">static</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">vec</span><span class="p">(</span><span class="n">vecSize</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="c1">// example.C</span>
+<span class="cp">#include</span> <span class="cpf">&quot;example.h&quot;</span><span class="cp"></span>
+<span class="kt">double</span> <span class="n">Example</span><span class="o">::</span><span class="n">rate</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">Example</span><span class="o">::</span><span class="n">vec</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="Chapter1.html" class="btn btn-neutral float-left" title="Chapter 1 Getting started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Javious
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
