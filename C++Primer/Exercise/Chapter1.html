@@ -196,6 +196,7 @@ PS C:\my\learning\C++Primer\Exercise\code\Chapter1&gt; $LASTEXITCODE
 </ol>
 <blockquote>
 <div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello, World&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
@@ -210,61 +211,41 @@ PS C:\my\learning\C++Primer\Exercise\code\Chapter1&gt; $LASTEXITCODE
 operator, *, to print the product instead.</p></li>
 </ol>
 <blockquote>
-<div><div class="highlight-cpp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
- <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
- <span class="p">{</span>
-     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
-     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
- <span class="p">}</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div></blockquote>
 <ol class="arabic simple" start="5">
 <li><p>We wrote the output in one large statement. Rewrite the program to use a separate statement to print each operand.</p></li>
 </ol>
 <blockquote>
-<div><div class="highlight-cpp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
- <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
- <span class="p">{</span>
-     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Enter two numbers:&quot;</span><span class="p">;</span>
-     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-     <span class="kt">int</span> <span class="n">v1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">v2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-     <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">v1</span> <span class="o">&gt;&gt;</span> <span class="n">v2</span><span class="p">;</span>
-     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;The sum of &quot;</span><span class="p">;</span>
-     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v1</span><span class="p">;</span>
-     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; and &quot;</span><span class="p">;</span>
-     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v2</span><span class="p">;</span>
-     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; is &quot;</span><span class="p">;</span>
-     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v1</span> <span class="o">+</span> <span class="n">v2</span><span class="p">;</span>
-     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
-     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
- <span class="p">}</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Enter two numbers:&quot;</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">v1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">v2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">v1</span> <span class="o">&gt;&gt;</span> <span class="n">v2</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;The sum of &quot;</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v1</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; and &quot;</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v2</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; is &quot;</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">v1</span> <span class="o">+</span> <span class="n">v2</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div></blockquote>
 <ol class="arabic" start="6">
 <li><p>Explain whether the following program fragment is legal.</p>
@@ -289,23 +270,16 @@ operator, *, to print the product instead.</p></li>
 <li><p>Compile a program that has incorrectly nested comments.</p></li>
 </ol>
 <blockquote>
-<div><div class="highlight-cpp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="highlight"><pre><span></span> /* comment pairs /*    */ cannot nest.
-  * &quot;cannot nest&quot; is considered source code
-  * as is the rest of the program
-  */
- int main()
- {
-     return 0;
- }
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span>/* comment pairs /*    */ cannot nest.
+ * &quot;cannot nest&quot; is considered source code
+ * as is the rest of the program
+ */
+int main()
+{
+    return 0;
+}
 </pre></div>
-</td></tr></table></div>
+</div>
 <p>Compiled by g++ in Windows:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>PS C:\my\learning\C++Primer\Exercise\code\Chapter1&gt; g++ .\1_7.cpp -Wall
 .\1_7.cpp:1:18: warning: &quot;/*&quot; within comment [-Wcomment]
@@ -330,16 +304,8 @@ any errors you encounter.</p>
 </li>
 </ol>
 <blockquote>
-<div><div class="highlight-cpp notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;/*&quot;</span><span class="p">;</span>
@@ -350,8 +316,335 @@ any errors you encounter.</p>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div></blockquote>
+<ol class="arabic" start="9">
+<li><p>Write a program that uses  a while to sum the numbers from 50 to 100.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">val</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">sum</span> <span class="o">+=</span> <span class="n">val</span><span class="p">;</span>
+        <span class="o">++</span><span class="n">val</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Sum of 50 to 100 inclusive is &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">sum</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>In addition to the ++ operator that adds 1 to its operand, there is a decrement operator(–) that subtracts 1. Use
+the decrement operator to write a while that prints the numbers from ten down to zero.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">val</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">val</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span><span class="p">;</span>
+        <span class="o">--</span><span class="n">val</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Write a program that prompts the user for two integers. Print each number in the range specified by those two
+integers.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">val1</span><span class="p">,</span> <span class="n">val2</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Please input two numbers:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">val1</span> <span class="o">&gt;&gt;</span> <span class="n">val2</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">val1</span> <span class="o">&lt;=</span> <span class="n">val2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">val1</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="o">++</span><span class="n">val1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>What does the following for loop do? What is the final value of sum?</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">sum</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The for loop sums the numbers from -100 to 100. The final value of sum is 0.</p>
+</li>
+<li><p>Rewrite the exercise from 1.4.1 (p. 13) using for loops.</p>
+<p>These three programs for 1.9、1.10、1.11, respectively</p>
+<p>1.9:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>1.10:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="o">--</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>1.11:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">val1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">val2</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Compare and contrast the loops that used a for with those using a while. Are there advantages or disadvantages to
+using either form?</p>
+<p>There is no essential difference between “for” and “while”. “for” is just a syntactic sugar for “while”.</p>
+<p><a class="reference external" href="http://www.cplusplus.com/forum/beginner/73584/">http://www.cplusplus.com/forum/beginner/73584/</a></p>
+</li>
+<li><p>Write programs that contain the common errors discussed in the box on page 16. Familiarize yourself with the
+messages the compiler generates.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="s">&quot;Hello, World&quot;</span><span class="p">;</span>    <span class="c1">// type error</span>
+    <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>                 <span class="c1">// Declaration error</span>
+    <span class="kt">int</span> <span class="nl">d</span><span class="p">:</span>                     <span class="c1">// Syntax error</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Compiled by g++ in Windows Powershell:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>PS C:\my\CPP\C++Primer\Exercise\code\Chapter1&gt; g++ -Wall .\1_15.cpp
+.\1_15.cpp: In function &#39;int main()&#39;:
+.\1_15.cpp:3:13: error: invalid conversion from &#39;const char*&#39; to &#39;int&#39; [-fpermissive]
+    3 |     int a = &quot;Hello, World&quot;;
+      |             ^~~~~~~~~~~~~~
+      |             |
+      |             const char*
+.\1_15.cpp:4:13: error: &#39;c&#39; was not declared in this scope
+    4 |     int b = c;
+      |             ^
+.\1_15.cpp:5:10: error: expected initializer before &#39;:&#39; token
+    5 |     int d:
+      |          ^
+.\1_15.cpp:3:9: warning: unused variable &#39;a&#39; [-Wunused-variable]
+    3 |     int a = &quot;Hello, World&quot;;
+      |         ^
+.\1_15.cpp:4:9: warning: unused variable &#39;b&#39; [-Wunused-variable]
+    4 |     int b = c;
+      |         ^
+</pre></div>
+</div>
+</li>
+<li><p>Write your own version of a program that prints the sum of a set of integers read from <code class="docutils literal notranslate"><span class="pre">cin</span></code>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">val</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">val</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="n">sum</span> <span class="o">+=</span> <span class="n">val</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Sum of odd numbers is &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">sum</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>What happens in the program presented in this section if the input values are all equal? What if there are no
+duplicated values?</p>
+<ul class="simple">
+<li><p>In the case that all input values are all equal, the output will be a line that shows the number of input value.</p></li>
+<li><p>In the case that there are no duplicated values, one value input and one line output with “value occurs 1 times”.</p></li>
+</ul>
+</li>
+<li><p>Compile and run the program from this section giving it only equal values as input. Run it again giving it values in
+which no number is repeated.</p>
+<p>This is the prints in Powershell:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>PS C:\my\CPP\C++Primer\Exercise\code\Chapter1&gt; .\a.exe
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 ^Z
+5 occurs 17 times
+PS C:\my\CPP\C++Primer\Exercise\code\Chapter1&gt; .\a.exe
+1 2 3 4 5 6 7 8 9 10 ^Z
+1 occurs 1 times
+2 occurs 1 times
+3 occurs 1 times
+4 occurs 1 times
+5 occurs 1 times
+6 occurs 1 times
+7 occurs 1 times
+8 occurs 1 times
+9 occurs 1 times
+10 occurs 1 times
+</pre></div>
+</div>
+</li>
+<li><p>Revise the program you wrote for the exercise in 1.4.1 (p.13) that printed a range of numbers so that it handles
+input in which the first number is smaller than the second.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">val1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">val2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Please input two numbers:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">val1</span> <span class="o">&gt;&gt;</span> <span class="n">val2</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">min</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">max</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">val1</span> <span class="o">&gt;</span> <span class="n">val2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">min</span> <span class="o">=</span> <span class="n">val2</span><span class="p">;</span>
+        <span class="n">max</span> <span class="o">=</span> <span class="n">val1</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">min</span> <span class="o">=</span> <span class="n">val1</span><span class="p">;</span>
+        <span class="n">max</span> <span class="o">=</span> <span class="n">val2</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">min</span> <span class="o">&lt;=</span> <span class="n">max</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">min</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="o">++</span><span class="n">min</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><a class="reference external" href="http://www.informit.com/title/0321714113">http://www.informit.com/title/0321714113</a> contains a copy of <code class="docutils literal notranslate"><span class="pre">Sales_item.h</span></code> in the Chapter 1 code directory. Copy
+that file to your working directory. Use it to write a program that reads a set of book sales transactions, writing
+each transaction to the standard output.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;Sales_item.h&quot;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Sales_item</span> <span class="n">book</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">book</span><span class="p">)</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">book</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Write a program that reads two Sales_item objects that have the same ISBN and produces their sum.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;Sales_item.h&quot;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Sales_item</span> <span class="n">item1</span><span class="p">,</span> <span class="n">item2</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">item1</span>  <span class="o">&gt;&gt;</span> <span class="n">item2</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">item1</span> <span class="o">+</span> <span class="n">item2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Write a program that reads several transactions for the same ISBN. Write the sum of all the transactions that were
+read.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;Sales_item.h&quot;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Sales_item</span> <span class="n">total</span><span class="p">,</span> <span class="n">book</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">book</span><span class="p">;</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">book</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">book</span><span class="p">)</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">book</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">total</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Write a program that reads several transactions and counts how many transactions occur for each ISBN.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;Sales_item.h&quot;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Sales_item</span> <span class="n">currItem</span><span class="p">,</span> <span class="n">valItem</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">currItem</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">valItem</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">currItem</span><span class="p">.</span><span class="n">isbn</span><span class="p">()</span> <span class="o">==</span> <span class="n">valItem</span><span class="p">.</span><span class="n">isbn</span><span class="p">())</span> <span class="p">{</span>
+                <span class="o">++</span><span class="n">cnt</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">currItem</span><span class="p">.</span><span class="n">isbn</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; occurs &quot;</span>
+                          <span class="o">&lt;&lt;</span> <span class="n">cnt</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; times&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+                <span class="n">currItem</span> <span class="o">=</span> <span class="n">valItem</span><span class="p">;</span>
+                <span class="n">cnt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">currItem</span><span class="p">.</span><span class="n">isbn</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; occurs &quot;</span>
+                  <span class="o">&lt;&lt;</span> <span class="n">cnt</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; times&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Test the previous program by giving multiple transactions representing multiple ISBNs. The records for each ISBN
+should be grouped together.</p>
+<p>Test result:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>PS C:\my\CPP\C++Primer\Exercise\code\Chapter1&gt; g++ .\1_23.cpp -Wall
+PS C:\my\CPP\C++Primer\Exercise\code\Chapter1&gt; .\a.exe
+0-201-78345-X 3 20.00 0-201-78345-X 3 25.00
+AAAAAAAAAAAAA 4 60.00 AAAAAAAAAAAAA 4 45.00 AAAAAAAAAAAAA 5 34.22
+0-201-78345-X occurs 2 times
+BBBBB 2 34.9 BBBBB 3 23.3
+AAAAAAAAAAAAA occurs 3 times
+^Z
+BBBBB occurs 2 times
+PS C:\my\CPP\C++Primer\Exercise\code\Chapter1&gt;
+</pre></div>
+</div>
+</li>
+<li><p>Using the Sales_item.h header from the Web site, compile and execute the bookstore program presented in this
+section.</p>
+<p>Test result:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>PS C:\my\CPP\C++Primer\Exercise\code\Chapter1&gt; g++ .\1_25.cpp -Wall
+PS C:\my\CPP\C++Primer\Exercise\code\Chapter1&gt; .\a.exe
+0-201-78345-X 3 20.00 0-201-78345-X 3 25.00
+AAAAAAAAAAAAA 4 60.00 AAAAAAAAAAAAA 4 45.00 AAAAAAAAAAAAA 5 34.22
+0-201-78345-X 6 135 22.5
+BBBBB 2 34.9 BBBBB 3 23.3
+AAAAAAAAAAAAA 13 591.1 45.4692
+^Z
+BBBBB 5 139.7 27.94
+PS C:\my\CPP\C++Primer\Exercise\code\Chapter1&gt;
+</pre></div>
+</div>
+</li>
+</ol>
 </div>
 
 
