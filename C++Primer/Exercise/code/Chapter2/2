@@ -1,0 +1,18 @@
+#include <iostream>
+#include <map>
+
+#include "test_a.hpp"
+
+int main()
+{
+
+    EventDispatcher::Get(0).Setup(0);
+    EventDispatcher::Get(1).Setup(1);
+    EventDispatcher::Get(2).Setup(2);
+    EventDispatcher::Get(3).Setup(3);
+
+    std::cout << "end" << std::endl;
+
+    return 0;
+}
+
