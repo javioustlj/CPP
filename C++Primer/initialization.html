@@ -1,0 +1,291 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Initialization &mdash; Leanring CPP  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Leanring CPP
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">C++Primer</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Leanring CPP</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Initialization</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/C++Primer/initialization.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="initialization">
+<h1>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h1>
+<p>An object that is <strong>initialized</strong> gets the specified value at the moment it is created.</p>
+<p>C++ defines several different forms of initialization.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+<span class="kt">int</span> <span class="n">a</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+<span class="kt">int</span> <span class="nf">a</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Initialization and assignment are different operations in C++. Initialization happens when a variable is given a value
+when it is created. Assignment obliterates an object’s current value and replaces that value with a new one.</p>
+</div>
+</div>
+<div class="section" id="list-initialization">
+<h1>List Initialization<a class="headerlink" href="#list-initialization" title="Permalink to this headline">¶</a></h1>
+<p>Initialization that use of curly braces is referred to as <strong>list initialization</strong>. Braced lists of initializers can now
+be used whenever we initialize an object and in some cases when we assign a new value to an object.</p>
+<p>When used with variables of built-in type, list initialization has one important property: The compiler will not let us
+list initialize variables of built-in type if the initializer might lead to the loss of information:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">long</span> <span class="kt">double</span> <span class="n">ld</span> <span class="o">=</span> <span class="mf">3.14159265357</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">a</span><span class="p">{</span><span class="n">ld</span><span class="p">},</span> <span class="n">b</span> <span class="o">=</span> <span class="p">{</span><span class="n">ld</span><span class="p">};</span>  <span class="c1">// error: narrowing conversion required</span>
+<span class="kt">int</span> <span class="nf">c</span><span class="p">(</span><span class="n">ld</span><span class="p">),</span> <span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="n">ld</span><span class="p">);</span>  <span class="c1">// ok: but value will be truncated</span>
+</pre></div>
+</div>
+<p>The compiler rejects the initializations of a and b because using a long double to initialize an int is likely to lose
+data. At a minimum, the fractional part of ld will be truncated. In addition, the integer part in ld might be too large
+to fit in an int.</p>
+</div>
+<div class="section" id="default-initialization">
+<h1>Default Initialization<a class="headerlink" href="#default-initialization" title="Permalink to this headline">¶</a></h1>
+<p>When we define a variable without an initializer, the variable is <strong>default initialized</strong>. What that default value is
+depends on the type of the variable and may also depend on where the variable if defined</p>
+<div class="section" id="built-in-type">
+<h2>Built-in type<a class="headerlink" href="#built-in-type" title="Permalink to this headline">¶</a></h2>
+<p>The value of an object of built-in type that is not explicitly initialized depends on where it is defined.</p>
+<p>Variables defined outside any function body are initialized to zero.
+Variables defined inside a function are uninitialized. The value of an uninitialized variable of built-in type is
+undefined.</p>
+</div>
+<div class="section" id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this headline">¶</a></h2>
+<p>Each class controls how we initialize objects of that class type.</p>
+<p>Objects of class type that we do not explicitly initialize have a value that is defined by the class</p>
+</div>
+<div class="section" id="pointer">
+<h2>Pointer<a class="headerlink" href="#pointer" title="Permalink to this headline">¶</a></h2>
+<p>Like other built-in types, pointer defined at block scope have undefined value if they are not initialized.</p>
+</div>
+</div>
+<div class="section" id="in-class-initialization">
+<h1>In-class initialization<a class="headerlink" href="#in-class-initialization" title="Permalink to this headline">¶</a></h1>
+<p>Under the new standard, we can supply an <strong>in-class initializer</strong> for a data member. When we create objects, the
+in-class initializers will be used to initialize the data member. Members without an initializer are default
+initialized.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">student</span> <span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">;</span>
+  <span class="kt">unsigned</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>   <span class="c1">// OK</span>
+  <span class="kt">unsigned</span> <span class="n">weight</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>    <span class="c1">// OK</span>
+  <span class="kt">unsigned</span> <span class="n">score</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>  <span class="c1">// OK</span>
+  <span class="kt">unsigned</span> <span class="nf">rank</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>      <span class="c1">// error: we can&#39;t specify an in-class initializer inside parentheses.</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In-class initializers are must either be enclosed insede curly braces or follow an = sign. We may not specify an
+in-class initializer inside parentheses.</p>
+</div>
+</div>
+<div class="section" id="direct-and-copy-forms-of-initialization">
+<h1>Direct and Copy Forms of Initialization<a class="headerlink" href="#direct-and-copy-forms-of-initialization" title="Permalink to this headline">¶</a></h1>
+<p>When we initialize a variable using =, we are asking the compiler to <strong>copy initialize</strong> the object by copying the
+initializer on the right-hand side into the object being created.</p>
+<p>Otherwise, when we omit the =, we use <strong>direct initialization</strong>.</p>
+</div>
+<div class="section" id="vector-type">
+<h1>Vector type<a class="headerlink" href="#vector-type" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span>vector&lt;string&gt; svec;   // default initialization; svec has no elements
+vector&lt;int&gt; ivec;      // initially empty
+vector&lt;int&gt; ivec2(ivec);   // copy elements of ivec into ivec2
+vector&lt;int&gt; ivec3 = ivec;  // copy elements of ivec into ivec3
+vector&lt;int&gt; ivec4{ivec}；   // error:
+vector&lt;string&gt; svec2(ivec)   // error: svec holds strings, not ints
+
+// list initializing
+vector&lt;string&gt; articles = {&quot;a&quot;, &quot;an&quot;, &quot;the&quot;};
+vector&lt;string&gt; v1{&quot;a&quot;, &quot;an&quot;, &quot;the&quot;};   // list initialization
+vector&lt;string&gt; v2(&quot;a&quot;, &quot;an&quot;, &quot;the&quot;);   // error, list initialization must use curly braces
+
+// value initialization
+vector&lt;int&gt; ivec(10);   // ten elements, each initialized to 0
+vector&lt;string&gt; svec(10)  // ten elements, each an empty string
+</pre></div>
+</div>
+<p>When we use curly braces, {…}, we’re saying that, if possible, we want to list initialize the object. That is, if
+there is a way to use the values inside the curly braces as a list of element initializers, the class will do so. Only
+if it is not possible to list initialize the object will the other ways to initialize the object be considered. On the
+other hand, if we use braces and there is no way to use the initializers to list initialize the object, then those
+values will be used to construct the object.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Javious
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

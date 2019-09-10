@@ -1,0 +1,1300 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Chapter 2 Variables and basic types &mdash; Leanring CPP  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Chapter 3 Strings, Vectors, And Arrays" href="Chapter3.html" />
+    <link rel="prev" title="Chapter 1 Getting started" href="Chapter1.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Leanring CPP
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">C++Primer</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Exercise</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Chapter1.html">Chapter 1 Getting started</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Chapter 2 Variables and basic types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Chapter3.html">Chapter 3 Strings, Vectors, And Arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Chapter7.html">Chapert 7 Classes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Leanring CPP</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">C++Primer</a> &raquo;</li>
+        
+          <li><a href="index.html">Exercise</a> &raquo;</li>
+        
+      <li>Chapter 2 Variables and basic types</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/C++Primer/Exercise/Chapter2.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="chapter-2-variables-and-basic-types">
+<h1>Chapter 2 Variables and basic types<a class="headerlink" href="#chapter-2-variables-and-basic-types" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic">
+<li><p>What are the differences between <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">long</span></code>, <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">long</span></code>, and <code class="docutils literal notranslate"><span class="pre">short</span></code>? Between an unsigned and a signed
+type? Between a float and a double?</p>
+<blockquote>
+<div><p>The standard guarantees minimum sizes between <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">long</span></code>, <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">long</span></code> and <code class="docutils literal notranslate"><span class="pre">short</span></code> are various.</p>
+<p>A signed type represents negative of positive numbers (including 0); an unsigned type represents only values
+greater than or equal to zero. In an unsigned type, all the bits represent value; in an signed type, the range should be evenly divide between
+positive and negative values.</p>
+<p>For a float type and a double type, the minimum numbers of significant digits are different.</p>
+</div></blockquote>
+</li>
+<li><p>To calculate a mortgage payment, what types would you use for the rate, principal, and payment? Explain why you
+selected each type.</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">double</span></code> should be used.</p>
+<p>The rate, principal and payment are usually not integer, so they should be represented by floating-point types.
+<code class="docutils literal notranslate"><span class="pre">float</span></code> usually does not have enough precision, and the cost of double-precision calculations versus single
+precision is negligible.</p>
+</div></blockquote>
+</li>
+<li><p>What output will the following code produce?</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">unsigned</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">u2</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">u2</span> <span class="o">-</span> <span class="n">u</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>    <span class="c1">// 32</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">u</span> <span class="o">-</span> <span class="n">u2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>    <span class="c1">// if 32-bits int, 4294967264</span>
+<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">i2</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i2</span> <span class="o">-</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>    <span class="c1">// 32</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">-</span> <span class="n">i2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>    <span class="c1">// -32</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">-</span> <span class="n">u</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>     <span class="c1">// 0</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">u</span> <span class="o">-</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>     <span class="c1">// 0</span>
+</pre></div>
+</div>
+</li>
+<li><p>Write a program to check whether your predictions were correct. If not, study this section until you understand what
+the problem is.</p>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">unsigned</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">u2</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">u2</span> <span class="o">-</span> <span class="n">u</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>    <span class="c1">// 32</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">u</span> <span class="o">-</span> <span class="n">u2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>    <span class="c1">// if 32-bits int, 4294967264</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">i2</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i2</span> <span class="o">-</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>    <span class="c1">// 32</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">-</span> <span class="n">i2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>    <span class="c1">// -32</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">-</span> <span class="n">u</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>     <span class="c1">// 0</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">u</span> <span class="o">-</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>     <span class="c1">// 0</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Reseult:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>PS C:\my\CPP\C++Primer\Exercise\code\Chapter2&gt; g++ -Wall .\2_4.cpp
+PS C:\my\CPP\C++Primer\Exercise\code\Chapter2&gt; .\a.exe
+32
+4294967264
+32
+-32
+0
+0
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Determine the type of each of the following literals. Explain the differences among the literals in each of the four
+examples.</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>‘a’, L’a’, “a”, L”a”</p></li>
+<li><p>10, 10u, 10L, 10uL, 012, 0xC</p></li>
+<li><p>3.14, 3.14f, 3.14L</p></li>
+<li><p>10, 10u, 10., 10e-2</p></li>
+</ol>
+<ol class="loweralpha simple">
+<li><p>‘a’ —&gt; char, L’a’ —&gt; wchar_t, “a” —&gt; array of constant chars, L”a” —&gt; array of constant wchar_t</p></li>
+<li><p>10 —&gt; int, 10u —&gt; unsigned, 10L —&gt; long, 10uL —&gt; unsigned long, 012 —&gt; int, 0xC —&gt; int</p></li>
+<li><p>3.14 —&gt; double, 3.14f —&gt; float, 3.14L —&gt; long double</p></li>
+<li><p>10 —&gt; int, 10u —&gt; unsigned, 10. —&gt; double, 10e-2 —&gt; double</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>What, if any, are the differences between the following definitions:</p>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">month</span> <span class="o">=</span> <span class="mi">9</span><span class="p">,</span> <span class="n">day</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">month</span> <span class="o">=</span> <span class="mi">09</span><span class="p">,</span> <span class="n">day</span> <span class="o">=</span> <span class="mo">07</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The second definition is illegal, because octal digits don’t contain 9.</p>
+</div></blockquote>
+</li>
+<li><p>What values do these literals represent? What type does each have?</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>“Who goes with F145rgus?012”</p></li>
+<li><p>3.14e1L</p></li>
+<li><p>1024f</p></li>
+<li><p>3.14L</p></li>
+</ol>
+<ol class="loweralpha simple">
+<li><p>“Who goes with Fergus? (newline)”, array of constant chars</p></li>
+<li><p>31.4, long double</p></li>
+<li><p>The suffix “f” is only valid for floating-point literals.</p></li>
+<li><p>3.14, long double</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Using escape sequences, write a program to print 2M followed by a newline. Modify the program to print 2, then a tab,
+then an M, followed by a newline.</p>
+<blockquote>
+<div><p>The fist program</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x32\x4D\n</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The modified program</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x32\t\x4D\n</span><span class="s">&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Explain the following definitions. For those that are illegal, explain what’s wrong and how to correct it.</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">std::cin</span> <span class="pre">&gt;&gt;</span> <span class="pre">int</span> <span class="pre">input_value;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">{3.14};</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">salary</span> <span class="pre">=</span> <span class="pre">wage</span> <span class="pre">=</span> <span class="pre">9999.99;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">3.14;</span></code></p></li>
+</ol>
+<ol class="loweralpha">
+<li><p>Illegal. Because a variable must be defined before it could be used. In addition, the operator &gt;&gt; expects its
+right-hand operands to be variables.
+.. code-block:: cpp</p>
+<blockquote>
+<div><p>int input_value;
+std::cin &gt;&gt; input_value;</p>
+</div></blockquote>
+</li>
+<li><p>Illegal. Narrowing conversion is not allowed by list initialization.
+<code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">3;</span></code> or <code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">3.14</span></code></p></li>
+<li><p>Illegal.  –&gt; <code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">salary{9999.99},</span> <span class="pre">wage{salary};</span></code></p></li>
+<li><p>Legal.</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>What are the initial value, if any, of each of the following variables?</p>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">global_str</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">global_int</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">local_int</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">local_str</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The value of global_int is 0.</p></li>
+<li><p>The value of local_int is undefined.</p></li>
+<li><p>The value of local_str is empty string (zero size and unspecified capacity)</p></li>
+<li><p>The value of global_str is empty string (zero size and unspecified capacity)</p></li>
+</ul>
+<p><a class="reference external" href="https://en.cppreference.com/w/cpp/string/basic_string/basic_string">https://en.cppreference.com/w/cpp/string/basic_string/basic_string</a></p>
+</div></blockquote>
+</li>
+<li><p>Explain whether each of the following is a declaration or a definition:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">extern</span> <span class="pre">int</span> <span class="pre">ix</span> <span class="pre">=</span> <span class="pre">1024;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">iy;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">extern</span> <span class="pre">int</span> <span class="pre">iz;</span></code></p></li>
+</ol>
+<ol class="loweralpha simple">
+<li><p>A definition</p></li>
+<li><p>A definition</p></li>
+<li><p>A declaration</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Which, if any, of the following names are invalid?</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">double</span> <span class="pre">=</span> <span class="pre">3.14;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">_;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">catch-22;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">1_or_2</span> <span class="pre">=</span> <span class="pre">1;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">Double</span> <span class="pre">=</span> <span class="pre">3.14;</span></code></p></li>
+</ol>
+<p>a. Invalid. <code class="docutils literal notranslate"><span class="pre">double</span></code> is one of C++ keywords.
+c. Invalid. Identifiers in C++ can be composed of letters, digits, and the underscore character; ‘-‘ is not included.
+d. Invalid. Identifiers must begin with either a letter or an underscore.</p>
+</div></blockquote>
+</li>
+<li><p>What is the value of j in the following program?</p>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The value of j is 100;</p>
+</div></blockquote>
+</li>
+<li><p>Is the following program legal? If so, what values are printed?</p>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">sum</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">sum</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="n">The</span> <span class="n">program</span> <span class="n">is</span> <span class="n">legal</span><span class="p">.</span> <span class="n">It</span> <span class="n">prints</span><span class="o">::</span>
+
+  <span class="mi">100</span> <span class="mi">55</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Which of the following definitions, if any, are invalid? Why?</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">ival</span> <span class="pre">=</span> <span class="pre">1.01;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">&amp;rval1</span> <span class="pre">=</span> <span class="pre">1.01</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">&amp;rval2</span> <span class="pre">=</span> <span class="pre">ival;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">&amp;rval3;</span></code></p></li>
+</ol>
+<p>b. Invalid. Initializer must be an object, not a literal.
+d. A reference must be initialized.</p>
+</div></blockquote>
+</li>
+<li><p>Which, if any, of the following assignments are invalid? If they are valid, explain what they do.
+<code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">&amp;r1</span> <span class="pre">=</span> <span class="pre">i;</span> <span class="pre">double</span> <span class="pre">d</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">&amp;r2</span> <span class="pre">d;</span></code></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">r2</span> <span class="pre">=</span> <span class="pre">3.14159;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">r2</span> <span class="pre">=</span> <span class="pre">r1;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">r2;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">r1</span> <span class="pre">=</span> <span class="pre">d;</span></code></p></li>
+</ol>
+<ol class="loweralpha simple">
+<li><p>Valid. It assigns 3.14159 to d</p></li>
+<li><p>Valid. It assigns the value of i to d;</p></li>
+<li><p>Valid. It assigns the value of d to i;</p></li>
+<li><p>Valid. It assigns the value of d to i;</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>What does the following code print?</p>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ri</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> <span class="n">ri</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">ri</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+<span class="n">It</span> <span class="n">prints</span><span class="o">::</span>
+
+  <span class="mi">10</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Write code to change the value of a pointer. Write code to change the value to which the pointer points.</p>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>  <span class="c1">// Change the value of a pointer</span>
+    <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span> <span class="c1">// Change the value to which the pointer points</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Explain the key difference between pointers and references.</p>
+<blockquote>
+<div><p>A pointer is a variable that holds memory address of another variable.</p>
+<p>A reference variable is an alias, that is, another name for an already existing variable.</p>
+<p><a class="reference external" href="https://www.geeksforgeeks.org/pointers-vs-references-cpp/">https://www.geeksforgeeks.org/pointers-vs-references-cpp/</a>
+<a class="reference external" href="https://stackoverflow.com/questions/57483/what-are-the-differences-between-a-pointer-variable-and-a-reference-variable-in">https://stackoverflow.com/questions/57483/what-are-the-differences-between-a-pointer-variable-and-a-reference-variable-in</a>
+<a class="reference external" href="https://techdifferences.com/difference-between-pointer-and-reference-2.html">https://techdifferences.com/difference-between-pointer-and-reference-2.html</a>
+<a class="reference external" href="https://www.educba.com/c-plus-plus-reference-vs-pointer/">https://www.educba.com/c-plus-plus-reference-vs-pointer/</a>
+<a class="reference external" href="https://www.quora.com/What-are-the-differences-between-references-and-pointers-in-coding">https://www.quora.com/What-are-the-differences-between-references-and-pointers-in-coding</a></p>
+</div></blockquote>
+</li>
+<li><p>What does the following program do?</p>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="kt">int</span> <span class="o">*</span><span class="n">p1</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span>
+<span class="o">*</span><span class="n">p1</span> <span class="o">=</span> <span class="o">*</span><span class="n">p1</span> <span class="o">*</span> <span class="o">*</span><span class="n">p1</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>It calculate 42 * 42 and assign it to , i;</p>
+</div></blockquote>
+</li>
+<li><p>Explain each of the following definitions. Indicate whether any are illegal and, if so, why.</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">0;</span></code></p>
+<ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">*</span> <span class="pre">dp</span> <span class="pre">=</span> <span class="pre">&amp;i;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">*ip</span> <span class="pre">=</span> <span class="pre">i;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">*p</span> <span class="pre">=</span> <span class="pre">&amp;i;</span></code></p></li>
+</ol>
+<ol class="loweralpha simple">
+<li><p>Illegal. The types of the pointer and the object to which it points must match.</p></li>
+<li><p>Illegal. It’s illegal to assign an int variable to a pointer.</p></li>
+<li><p>Legal.</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Assuming p is a pointer to int, explain the following code.</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">(p)</span> <span class="pre">//</span> <span class="pre">...</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">(*p)</span> <span class="pre">//</span> <span class="pre">...</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">(p)</span></code> evaluates whether the pointer p is a nonzero pointer or not.</p>
+<p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">(*p)</span></code> evaluates whether the value of the int object that p points to is zero or not.</p>
+</div></blockquote>
+</li>
+<li><p>Given a pointer p, can you determine whether p points to a valid object? If so, how? If not, why not?</p>
+<blockquote>
+<div><p>To determine whether p points to a valid object, we need more information.</p>
+</div></blockquote>
+</li>
+<li><p>Why is the initialization of p legal but that of lp illegal?</p>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>        <span class="kt">void</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span>        <span class="kt">long</span> <span class="o">*</span><span class="n">lp</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The types of the pointer and the object to which it points must match. lp is a pointer points long, i has type int.
+So, it is illegal.</p>
+<p>The type void* is a special pointer type that can hold the address of any object.</p>
+</div></blockquote>
+</li>
+<li><p>Determine the types and values of each of the following variables.</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">int*</span> <span class="pre">ip,</span> <span class="pre">i,</span> <span class="pre">&amp;r</span> <span class="pre">=</span> <span class="pre">i;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">i,</span> <span class="pre">*p</span> <span class="pre">=</span> <span class="pre">0;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int*</span> <span class="pre">ip,</span> <span class="pre">ip2;</span></code></p></li>
+</ol>
+<ol class="loweralpha simple">
+<li><p>ip is a pointer to an int, i is an int, r is a reference to an int.</p></li>
+<li><p>i is an int, p is a pointer to an int and its value is 0.</p></li>
+<li><p>ip is a pointer to an int, ip2 is an int.</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Which of the following are legal? For those that are illegal, explain why?</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">int</span> <span class="pre">buf;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">cnt</span> <span class="pre">=</span> <span class="pre">0;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">int</span> <span class="pre">sz</span> <span class="pre">=</span> <span class="pre">cnt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">++cnt;</span> <span class="pre">++sz</span></code></p></li>
+</ol>
+<p>The exercise is very confusing, since it doesn’t specify whether the for statements are belong to a program or not.
+If not, it’s meaningless for c and d. So I just assume that they are sequentially.</p>
+<ol class="loweralpha simple">
+<li><p>Illegal. A const object must be initialized.</p></li>
+<li><p>Legal</p></li>
+<li><p>It will be legal if buf was initialized.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">++cnt;</span></code> is legal. <code class="docutils literal notranslate"><span class="pre">++sz;</span></code> is illegal: the value of a const object can’t be changed.</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Which of the following initializations are legal? Explain why.</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">-1,</span> <span class="pre">&amp;r</span> <span class="pre">=</span> <span class="pre">0;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">*const</span> <span class="pre">p2</span> <span class="pre">=</span> <span class="pre">&amp;i2;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">int</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">-1,</span> <span class="pre">&amp;r</span> <span class="pre">=</span> <span class="pre">0;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">int</span> <span class="pre">*const</span> <span class="pre">p3</span> <span class="pre">=</span> <span class="pre">&amp;i2;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">int</span> <span class="pre">*p1</span> <span class="pre">=</span> <span class="pre">&amp;i2;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">int</span> <span class="pre">&amp;const</span> <span class="pre">r2;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">int</span> <span class="pre">i2</span> <span class="pre">=</span> <span class="pre">i,</span> <span class="pre">&amp;r</span> <span class="pre">=</span> <span class="pre">i;</span></code></p></li>
+</ol>
+<p>This exercise is quite ambiguous due to the type of i2 is unknown.</p>
+<p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">i2</span> <span class="pre">=</span> <span class="pre">0</span></code> is assumed.</p>
+<ol class="loweralpha simple">
+<li><p>Illegal. r is a plain, nonconst reference.</p></li>
+<li><p>Legal.</p></li>
+<li><p>Legal.</p></li>
+<li><p>Legal.</p></li>
+<li><p>Legal.</p></li>
+<li><p>Illegal. An reference must be initialized; the second const is redundant.</p></li>
+<li><p>Legal.</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Explain the following definitions. Identify any that are illegal.</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">i,</span> <span class="pre">*const</span> <span class="pre">cp;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">*p1,</span> <span class="pre">*const</span> <span class="pre">p2;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">int</span> <span class="pre">ic,</span> <span class="pre">&amp;r</span> <span class="pre">=</span> <span class="pre">ic;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">int</span> <span class="pre">*const</span> <span class="pre">p3;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">int</span> <span class="pre">*p;</span></code></p></li>
+</ol>
+<ol class="loweralpha simple">
+<li><p>Illegal. cp is a const pointer point to an int. An const must be initialized.</p></li>
+<li><p>Illegal with the same reason with list item a.</p></li>
+<li><p>Illegal. ic must be initialized.</p></li>
+<li><p>Illegal. p3 is a const pointer point to an const that is an int.</p></li>
+<li><p>Legal. p is a pointer point to a const that is a int.</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>Using the variable in the previous exercise, which of the following assignments are legal? Explain why.</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">ic;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p1</span> <span class="pre">=</span> <span class="pre">p3;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p1</span> <span class="pre">=</span> <span class="pre">&amp;ic;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p3</span> <span class="pre">=</span> <span class="pre">&amp;ic;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p2</span> <span class="pre">=</span> <span class="pre">p1;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ic</span> <span class="pre">=</span> <span class="pre">*p3;</span></code></p></li>
+</ol>
+<ol class="loweralpha simple">
+<li><p>Legal.</p></li>
+<li><p>Illegal. p3 has low-level const, but p1 doesn’t</p></li>
+<li><p>Illegal. p1 is a plain pointer while ic is a const int.</p></li>
+<li><p>Illegal. p3 is a const. An const can’t be assigned.</p></li>
+<li><p>Illegal. p2 is a const. An const can’t be assigned.</p></li>
+<li><p>Illegal. ic is a const. An const can’t be asiigned.</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>For each of the following declarations indicate whether the object being declared has top-level or low-level const.</p>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">int</span> <span class="n">v2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="kt">int</span> <span class="n">v1</span> <span class="o">=</span> <span class="n">v2</span><span class="p">;</span>
+<span class="kt">int</span> <span class="o">*</span><span class="n">p1</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">v1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">r1</span> <span class="o">=</span> <span class="n">v1</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="o">*</span><span class="n">p2</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">v2</span><span class="p">,</span> <span class="o">*</span><span class="k">const</span> <span class="n">p3</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">r2</span> <span class="o">=</span> <span class="n">v2</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>v2 and p3 has top-level const; p2, r2 and p3 has low-level const.</p>
+</div></blockquote>
+</li>
+<li><p>Given the declarations in the previous exercise determine whether the following assignments are legal. Explain how
+the top-level or low-level const applies in each case.</p>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">r1</span> <span class="o">=</span> <span class="n">v2</span><span class="p">;</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">p2</span><span class="p">;</span>        <span class="n">p2</span> <span class="o">=</span> <span class="n">p1</span><span class="p">;</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">p3</span><span class="p">;</span>        <span class="n">p2</span> <span class="o">=</span> <span class="n">p3</span><span class="p">;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">r1</span> <span class="pre">=</span> <span class="pre">v2</span></code> is legal.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p1</span> <span class="pre">=</span> <span class="pre">p2</span></code> is illegal because p1 is a pointer pointe to a plain int while p2 is a pointer point to a const int.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p2</span> <span class="pre">=</span> <span class="pre">p1</span></code> is legal.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p1</span> <span class="pre">=</span> <span class="pre">p3</span></code> is illegal with same reason with <code class="docutils literal notranslate"><span class="pre">p1</span> <span class="pre">=</span> <span class="pre">p2</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p2</span> <span class="pre">=</span> <span class="pre">p3</span></code> is legal.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Is the following code legal or not? If not, how might you make it legal?</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">null</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">*p</span> <span class="pre">=</span> <span class="pre">null;</span></code></p>
+<p>It is illegal to assign an int variable to a pointer. It can be written as <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">null</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">*p</span> <span class="pre">=</span> <span class="pre">nullptr;</span></code></p>
+</div></blockquote>
+</li>
+<li><p>Using the variable definitions from this section, determine what happens in each of these assignments.</p>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span> <span class="n">e</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span> <span class="n">g</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>a was assigned with value 42.</p></li>
+<li><p>b was assigned with value 42.</p></li>
+<li><p>c was assigned with value 42.</p></li>
+<li><p>Illegal. d is an int *. It’s illegal to assign an int variable to a pointer.</p></li>
+<li><p>Illegal. e is a const int *. It’s illegal to assign an int variable to a pointer.</p></li>
+<li><p>g is a const int &amp;. It’s illegal to assign to a const.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Write a program containing the variables and assignments from the previous exercise. Print the variables before and
+after the assignments to check whether your predictions in the previous exercise were correct. If not, study the
+examples until you can convince yourself you know what led you to the wrong conclusion.</p>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">r</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">ci</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">cr</span> <span class="o">=</span> <span class="n">ci</span><span class="p">;</span>
+
+    <span class="k">auto</span> <span class="n">a</span> <span class="o">=</span> <span class="n">r</span><span class="p">;</span> <span class="c1">// a is an int (r is an alias for i, which has type int)</span>
+    <span class="k">auto</span> <span class="n">b</span> <span class="o">=</span> <span class="n">ci</span><span class="p">;</span> <span class="c1">// b is an int (top-level const in ci is dropped)</span>
+    <span class="k">auto</span> <span class="n">c</span> <span class="o">=</span> <span class="n">cr</span><span class="p">;</span> <span class="c1">// c is an int (cr is an alias for ci whose const is top-level)</span>
+    <span class="k">auto</span> <span class="n">d</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span> <span class="c1">// d is an int *</span>
+    <span class="k">auto</span> <span class="n">e</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">ci</span><span class="p">;</span> <span class="c1">// e is an const int * ??</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">f</span> <span class="o">=</span> <span class="n">ci</span><span class="p">;</span>
+    <span class="k">auto</span> <span class="o">&amp;</span><span class="n">g</span> <span class="o">=</span> <span class="n">ci</span><span class="p">;</span> <span class="c1">// g is a const int &amp;</span>
+    <span class="k">auto</span> <span class="o">&amp;</span><span class="n">h</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span><span class="n">j</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+    <span class="k">auto</span> <span class="n">k</span> <span class="o">=</span> <span class="n">ci</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">l</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+    <span class="k">auto</span> <span class="o">&amp;</span><span class="n">m</span> <span class="o">=</span> <span class="n">ci</span><span class="p">,</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">ci</span><span class="p">;</span>
+    <span class="c1">//auto &amp;n = i, *p2 = &amp;ci;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;a = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;b = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;c = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;d = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">d</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;e = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">e</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;f = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">f</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;g = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">g</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span>
+              <span class="c1">// &lt;&lt; &quot;h = &quot; &lt;&lt; h &lt;&lt; &#39;\n&#39;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;i = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;j = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">j</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;k = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">k</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;l = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">l</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;m = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">m</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span>
+              <span class="c1">// &lt;&lt; &quot;n = &quot; &lt;&lt; n &lt;&lt; &#39;\n&#39;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;p = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">p</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+    <span class="c1">// d = 42;</span>
+    <span class="c1">// e = 42;</span>
+    <span class="c1">// f = 42;</span>
+    <span class="c1">// g = 42;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;a = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;b = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;c = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;d = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">d</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;e = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">e</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;f = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">f</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;g = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">g</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span>
+              <span class="c1">// &lt;&lt; &quot;h = &quot; &lt;&lt; h &lt;&lt; &#39;\n&#39;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;i = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;j = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">j</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;k = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">k</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;l = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">l</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;m = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">m</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span>
+              <span class="c1">// &lt;&lt; &quot;n = &quot; &lt;&lt; n &lt;&lt; &#39;\n&#39;</span>
+              <span class="o">&lt;&lt;</span> <span class="s">&quot;p = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">p</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Determine the types deduced in each of the following definitions. Once you’ve figured out the types, write a program
+to see whether you were correct.</p>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="k">auto</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span><span class="n">k</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="k">auto</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span>
+<span class="k">const</span> <span class="k">auto</span> <span class="n">j2</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">k2</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>j is an int</p></li>
+<li><p>k is a const int &amp;</p></li>
+<li><p>p is a const int *</p></li>
+<li><p>j2 is a const int</p></li>
+<li><p>k2 is a const int &amp;</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>In the following code, determine the type of each variable and the value each variable has when the code finishes.</p>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="k">decltype</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+<span class="k">decltype</span> <span class="p">(</span> <span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="p">)</span> <span class="n">d</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+<span class="o">++</span><span class="n">c</span><span class="p">;</span>
+<span class="o">++</span><span class="n">d</span><span class="p">;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>a = 4; a is an int.</p></li>
+<li><p>b = 4; b is an int.</p></li>
+<li><p>c = 4; c is an int.</p></li>
+<li><p>d = 4; d is an reference to a.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Assignment is an example of an expression that yields a reference type. The type is an reference to the type of
+left-hand operand. That is, if i is an int, then the type of the expression i = x is int&amp;. Using that knowlege,
+determine the type and value of each variable in this code:</p>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="k">decltype</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+<span class="k">decltype</span><span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">)</span> <span class="n">d</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>There is one important thing is that expression is not executed.
+<a class="reference external" href="https://stackoverflow.com/questions/17241614/what-expressions-yield-a-reference-type-when-decltype-is-applied-to-them">https://stackoverflow.com/questions/17241614/what-expressions-yield-a-reference-type-when-decltype-is-applied-to-them</a></p>
+<ul class="simple">
+<li><p>a = 3; a is an int;</p></li>
+<li><p>b = 4; b is an int;</p></li>
+<li><p>c = 3; c is an int;</p></li>
+<li><p>d = 3; d is an int&amp;;</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Describe the differences in type deduction between decltype and auto. Give an example of an expression where auto
+and decltype will deduce the same type and an example where they will deduce differing types.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>The variable defined by auto must be initialized; it wasn’t needed while use decltype;</p></li>
+<li><p>deduction done by decltype depends on the form of its given expression. decltype ( (variable) ) is always a
+reference type, but decltype (variable) is a reference type only if variable is a reference.</p></li>
+<li><p>The way decltype handles top-level const and reference is different. When the expression to which we are apply
+decltype is a variable, decltype returns the type of that variable, including top-level const and reference.</p></li>
+<li><p>When used to an expression that is not a variable and yield objects that can stand on that can stand on the
+left-hand of side the assignment, decltype returns a reference type but auto returns the plain type.</p></li>
+</ol>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="k">auto</span> <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">);</span>         <span class="c1">// c is an int;</span>
+<span class="k">decltype</span><span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">)</span> <span class="n">d</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>    <span class="c1">// d is an int&amp;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Compile the following program to see what happens when you forget the semicolon after a class denition. Remember the
+message for future reference.</p>
+<blockquote>
+<div><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">Foo</span> <span class="p">{</span> <span class="cm">/* empty */</span> <span class="p">}</span> <span class="c1">// Note: no semicolon</span>
+<span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The compile result:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>PS C:\my\CPP\C++Primer\Exercise\code\Chapter2&gt; g++ .\2_39.cpp -Wall
+.\2_39.cpp:1:27: error: expected &#39;;&#39; after struct definition
+    1 | struct Foo { /* empty */ } // Note: no semicolon
+      |                           ^
+      |                           ;
+PS C:\my\CPP\C++Primer\Exercise\code\Chapter2&gt;
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Write your own version of the Sales_data class.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">Sales_data</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">bookNo</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="n">units_sold</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">revenue</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">profit</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</li>
+<li><p>Use your Sales_data class to rewrite the exercise in 1.5.1 (p.22), 1.5.2(p.24), and 1.6(p.25). For now you should
+define your Sales_data class in the same file as your main function.</p>
+<blockquote>
+<div><p>For exercise 1.20</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+
+<span class="k">struct</span> <span class="n">Sales_data</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">bookNo</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="n">units_sold</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">revenue</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">profit</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">price</span><span class="p">{</span><span class="mf">0.0</span><span class="p">},</span> <span class="n">purchasePrice</span><span class="p">{</span><span class="mf">0.0</span><span class="p">};</span>
+    <span class="n">Sales_data</span> <span class="n">data</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">data</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&gt;&gt;</span> <span class="n">data</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&gt;&gt;</span> <span class="n">price</span> <span class="o">&gt;&gt;</span> <span class="n">purchasePrice</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">data</span><span class="p">.</span><span class="n">revenue</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="n">price</span><span class="p">;</span>
+        <span class="n">data</span><span class="p">.</span><span class="n">profit</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="p">(</span><span class="n">price</span> <span class="o">-</span> <span class="n">purchasePrice</span><span class="p">);</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">data</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>
+                  <span class="o">&lt;&lt;</span> <span class="n">data</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>
+                  <span class="o">&lt;&lt;</span> <span class="n">data</span><span class="p">.</span><span class="n">revenue</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">units_sold</span><span class="p">)</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">data</span><span class="p">.</span><span class="n">revenue</span> <span class="o">/</span> <span class="n">data</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+        <span class="k">else</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="mi">0</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">data</span><span class="p">.</span><span class="n">profit</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For exercise 1.21:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+
+<span class="k">struct</span> <span class="n">Sales_data</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">bookNo</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="n">units_sold</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">revenue</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">profit</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">price</span><span class="p">{</span><span class="mf">0.0</span><span class="p">},</span> <span class="n">purchasePrice</span><span class="p">{</span><span class="mf">0.0</span><span class="p">};</span>
+    <span class="n">Sales_data</span> <span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">data1</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&gt;&gt;</span> <span class="n">data1</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&gt;&gt;</span> <span class="n">price</span> <span class="o">&gt;&gt;</span> <span class="n">purchasePrice</span><span class="p">;</span>
+    <span class="n">data1</span><span class="p">.</span><span class="n">revenue</span> <span class="o">=</span> <span class="n">data1</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="n">price</span><span class="p">;</span>
+    <span class="n">data1</span><span class="p">.</span><span class="n">profit</span> <span class="o">=</span> <span class="n">data1</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="p">(</span><span class="n">price</span> <span class="o">-</span> <span class="n">purchasePrice</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">data2</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&gt;&gt;</span> <span class="n">data2</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&gt;&gt;</span> <span class="n">price</span> <span class="o">&gt;&gt;</span> <span class="n">purchasePrice</span><span class="p">;</span>
+    <span class="n">data2</span><span class="p">.</span><span class="n">revenue</span> <span class="o">=</span> <span class="n">data2</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="n">price</span><span class="p">;</span>
+    <span class="n">data2</span><span class="p">.</span><span class="n">profit</span> <span class="o">=</span> <span class="n">data2</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="p">(</span><span class="n">price</span> <span class="o">-</span> <span class="n">purchasePrice</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">data1</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">==</span> <span class="n">data2</span><span class="p">.</span><span class="n">bookNo</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">unsigned</span> <span class="n">totalCnt</span> <span class="o">=</span> <span class="n">data1</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">+</span> <span class="n">data2</span><span class="p">.</span><span class="n">units_sold</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="n">totalRevenue</span> <span class="o">=</span> <span class="n">data1</span><span class="p">.</span><span class="n">revenue</span> <span class="o">+</span> <span class="n">data2</span><span class="p">.</span><span class="n">revenue</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="n">totalProfit</span> <span class="o">=</span> <span class="n">data1</span><span class="p">.</span><span class="n">profit</span> <span class="o">+</span> <span class="n">data2</span><span class="p">.</span><span class="n">profit</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">data1</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>
+                  <span class="o">&lt;&lt;</span> <span class="n">totalCnt</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>
+                  <span class="o">&lt;&lt;</span> <span class="n">totalRevenue</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">totalCnt</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">totalRevenue</span> <span class="o">/</span> <span class="n">totalCnt</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+        <span class="k">else</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;(no sales)&quot;</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">totalProfit</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Data must refer to the same ISBN&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For exercise 1.22</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+
+<span class="k">struct</span> <span class="n">Sales_data</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">bookNo</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="n">units_sold</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">revenue</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">profit</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">price</span><span class="p">{</span><span class="mf">0.0</span><span class="p">},</span> <span class="n">purchasePrice</span><span class="p">{</span><span class="mf">0.0</span><span class="p">};</span>
+    <span class="n">Sales_data</span> <span class="n">total</span><span class="p">,</span> <span class="n">data</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">data</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&gt;&gt;</span> <span class="n">data</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&gt;&gt;</span> <span class="n">price</span> <span class="o">&gt;&gt;</span> <span class="n">purchasePrice</span><span class="p">;</span>
+    <span class="n">data</span><span class="p">.</span><span class="n">revenue</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="n">price</span><span class="p">;</span>
+    <span class="n">data</span><span class="p">.</span><span class="n">profit</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="p">(</span><span class="n">price</span> <span class="o">-</span> <span class="n">purchasePrice</span><span class="p">);</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">data</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&gt;&gt;</span> <span class="n">data</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&gt;&gt;</span> <span class="n">price</span> <span class="o">&gt;&gt;</span> <span class="n">purchasePrice</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">data</span><span class="p">.</span><span class="n">revenue</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="n">price</span><span class="p">;</span>
+        <span class="n">data</span><span class="p">.</span><span class="n">profit</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="p">(</span><span class="n">price</span> <span class="o">-</span> <span class="n">purchasePrice</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">total</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">==</span> <span class="n">data</span><span class="p">.</span><span class="n">bookNo</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">+=</span> <span class="n">data</span><span class="p">.</span><span class="n">units_sold</span><span class="p">;</span>
+            <span class="n">total</span><span class="p">.</span><span class="n">revenue</span> <span class="o">+=</span> <span class="n">data</span><span class="p">.</span><span class="n">revenue</span><span class="p">;</span>
+            <span class="n">total</span><span class="p">.</span><span class="n">profit</span> <span class="o">+=</span> <span class="n">data</span><span class="p">.</span><span class="n">profit</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Data must refer to the same ISBN&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>
+              <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>
+              <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">revenue</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">revenue</span> <span class="o">/</span> <span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+    <span class="k">else</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;(no sales)&quot;</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">profit</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For exercise 1.23</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+
+<span class="k">struct</span> <span class="n">Sales_data</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">bookNo</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="n">units_sold</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">revenue</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">profit</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">price</span><span class="p">{</span><span class="mf">0.0</span><span class="p">},</span> <span class="n">purchasePrice</span><span class="p">{</span><span class="mf">0.0</span><span class="p">};</span>
+    <span class="n">Sales_data</span> <span class="n">currData</span><span class="p">,</span> <span class="n">valData</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">currData</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&gt;&gt;</span> <span class="n">currData</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&gt;&gt;</span> <span class="n">price</span> <span class="o">&gt;&gt;</span> <span class="n">purchasePrice</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">currData</span><span class="p">.</span><span class="n">revenue</span> <span class="o">=</span> <span class="n">currData</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="n">price</span><span class="p">;</span>
+        <span class="n">currData</span><span class="p">.</span><span class="n">profit</span> <span class="o">=</span> <span class="n">currData</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="p">(</span><span class="n">price</span> <span class="o">-</span> <span class="n">purchasePrice</span><span class="p">);</span>
+        <span class="kt">unsigned</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">valData</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&gt;&gt;</span> <span class="n">valData</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&gt;&gt;</span> <span class="n">price</span> <span class="o">&gt;&gt;</span> <span class="n">purchasePrice</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">valData</span><span class="p">.</span><span class="n">revenue</span> <span class="o">=</span> <span class="n">valData</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="n">price</span><span class="p">;</span>
+            <span class="n">valData</span><span class="p">.</span><span class="n">profit</span> <span class="o">=</span> <span class="n">valData</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="p">(</span><span class="n">price</span> <span class="o">-</span> <span class="n">purchasePrice</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">currData</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">==</span> <span class="n">valData</span><span class="p">.</span><span class="n">bookNo</span><span class="p">)</span> <span class="p">{</span>
+                <span class="o">++</span><span class="n">cnt</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">currData</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; occurs &quot;</span>
+                          <span class="o">&lt;&lt;</span> <span class="n">cnt</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; times&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">currData</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; occurs &quot;</span>
+                  <span class="o">&lt;&lt;</span> <span class="n">cnt</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; times&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For exercise 1.25</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+
+<span class="k">struct</span> <span class="n">Sales_data</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">bookNo</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="n">units_sold</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">revenue</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">profit</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">price</span><span class="p">{</span><span class="mf">0.0</span><span class="p">},</span> <span class="n">purchasePrice</span><span class="p">{</span><span class="mf">0.0</span><span class="p">};</span>
+    <span class="n">Sales_data</span> <span class="n">total</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">total</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&gt;&gt;</span> <span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&gt;&gt;</span> <span class="n">price</span> <span class="o">&gt;&gt;</span> <span class="n">purchasePrice</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">total</span><span class="p">.</span><span class="n">revenue</span> <span class="o">=</span> <span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="n">price</span><span class="p">;</span>
+        <span class="n">total</span><span class="p">.</span><span class="n">profit</span> <span class="o">=</span> <span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="p">(</span><span class="n">price</span> <span class="o">-</span> <span class="n">purchasePrice</span><span class="p">);</span>
+        <span class="n">Sales_data</span> <span class="n">trans</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">trans</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&gt;&gt;</span> <span class="n">trans</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&gt;&gt;</span> <span class="n">price</span> <span class="o">&gt;&gt;</span> <span class="n">purchasePrice</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">trans</span><span class="p">.</span><span class="n">revenue</span> <span class="o">=</span> <span class="n">trans</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="n">price</span><span class="p">;</span>
+            <span class="n">trans</span><span class="p">.</span><span class="n">profit</span> <span class="o">=</span> <span class="n">trans</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="p">(</span><span class="n">price</span> <span class="o">-</span> <span class="n">purchasePrice</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">total</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">==</span> <span class="n">trans</span><span class="p">.</span><span class="n">bookNo</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">+=</span> <span class="n">trans</span><span class="p">.</span><span class="n">units_sold</span><span class="p">;</span>
+                <span class="n">total</span><span class="p">.</span><span class="n">revenue</span> <span class="o">+=</span> <span class="n">trans</span><span class="p">.</span><span class="n">revenue</span><span class="p">;</span>
+                <span class="n">total</span><span class="p">.</span><span class="n">profit</span> <span class="o">+=</span> <span class="n">trans</span><span class="p">.</span><span class="n">profit</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>
+                          <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>
+                          <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">revenue</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+                    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">revenue</span> <span class="o">/</span> <span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+                <span class="k">else</span>
+                    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;(no sales)&quot;</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">profit</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>
+                  <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>
+                  <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">revenue</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">revenue</span> <span class="o">/</span> <span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+        <span class="k">else</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;(no sales)&quot;</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">profit</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;No data?!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Write your own version of the Sales_data.h header and use it to rewrite the exercise from 2.62(p.76).</p>
+<blockquote>
+<div><p>Sales_data.h</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef SALES_DATA_H</span>
+<span class="cp">#define SALES_DATA_H</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+
+<span class="k">struct</span> <span class="n">Sales_data</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">bookNo</span><span class="p">;</span>
+    <span class="kt">unsigned</span> <span class="n">units_sold</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">revenue</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">profit</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+<p>For exercise 1.20</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;Sales_data.h&quot;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">price</span><span class="p">{</span><span class="mf">0.0</span><span class="p">},</span> <span class="n">purchasePrice</span><span class="p">{</span><span class="mf">0.0</span><span class="p">};</span>
+    <span class="n">Sales_data</span> <span class="n">data</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">data</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&gt;&gt;</span> <span class="n">data</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&gt;&gt;</span> <span class="n">price</span> <span class="o">&gt;&gt;</span> <span class="n">purchasePrice</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">data</span><span class="p">.</span><span class="n">revenue</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="n">price</span><span class="p">;</span>
+        <span class="n">data</span><span class="p">.</span><span class="n">profit</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="p">(</span><span class="n">price</span> <span class="o">-</span> <span class="n">purchasePrice</span><span class="p">);</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">data</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>
+                  <span class="o">&lt;&lt;</span> <span class="n">data</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>
+                  <span class="o">&lt;&lt;</span> <span class="n">data</span><span class="p">.</span><span class="n">revenue</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">units_sold</span><span class="p">)</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">data</span><span class="p">.</span><span class="n">revenue</span> <span class="o">/</span> <span class="n">data</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+        <span class="k">else</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="mi">0</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">data</span><span class="p">.</span><span class="n">profit</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For exercise 1.21:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;Sales_data.h&quot;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">price</span><span class="p">{</span><span class="mf">0.0</span><span class="p">},</span> <span class="n">purchasePrice</span><span class="p">{</span><span class="mf">0.0</span><span class="p">};</span>
+    <span class="n">Sales_data</span> <span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">data1</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&gt;&gt;</span> <span class="n">data1</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&gt;&gt;</span> <span class="n">price</span> <span class="o">&gt;&gt;</span> <span class="n">purchasePrice</span><span class="p">;</span>
+    <span class="n">data1</span><span class="p">.</span><span class="n">revenue</span> <span class="o">=</span> <span class="n">data1</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="n">price</span><span class="p">;</span>
+    <span class="n">data1</span><span class="p">.</span><span class="n">profit</span> <span class="o">=</span> <span class="n">data1</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="p">(</span><span class="n">price</span> <span class="o">-</span> <span class="n">purchasePrice</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">data2</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&gt;&gt;</span> <span class="n">data2</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&gt;&gt;</span> <span class="n">price</span> <span class="o">&gt;&gt;</span> <span class="n">purchasePrice</span><span class="p">;</span>
+    <span class="n">data2</span><span class="p">.</span><span class="n">revenue</span> <span class="o">=</span> <span class="n">data2</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="n">price</span><span class="p">;</span>
+    <span class="n">data2</span><span class="p">.</span><span class="n">profit</span> <span class="o">=</span> <span class="n">data2</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="p">(</span><span class="n">price</span> <span class="o">-</span> <span class="n">purchasePrice</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">data1</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">==</span> <span class="n">data2</span><span class="p">.</span><span class="n">bookNo</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">unsigned</span> <span class="n">totalCnt</span> <span class="o">=</span> <span class="n">data1</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">+</span> <span class="n">data2</span><span class="p">.</span><span class="n">units_sold</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="n">totalRevenue</span> <span class="o">=</span> <span class="n">data1</span><span class="p">.</span><span class="n">revenue</span> <span class="o">+</span> <span class="n">data2</span><span class="p">.</span><span class="n">revenue</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="n">totalProfit</span> <span class="o">=</span> <span class="n">data1</span><span class="p">.</span><span class="n">profit</span> <span class="o">+</span> <span class="n">data2</span><span class="p">.</span><span class="n">profit</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">data1</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>
+                  <span class="o">&lt;&lt;</span> <span class="n">totalCnt</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>
+                  <span class="o">&lt;&lt;</span> <span class="n">totalRevenue</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">totalCnt</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">totalRevenue</span> <span class="o">/</span> <span class="n">totalCnt</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+        <span class="k">else</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;(no sales)&quot;</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">totalProfit</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Data must refer to the same ISBN&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For exercise 1.22</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;Sales_data.h&quot;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">price</span><span class="p">{</span><span class="mf">0.0</span><span class="p">},</span> <span class="n">purchasePrice</span><span class="p">{</span><span class="mf">0.0</span><span class="p">};</span>
+    <span class="n">Sales_data</span> <span class="n">total</span><span class="p">,</span> <span class="n">data</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">data</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&gt;&gt;</span> <span class="n">data</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&gt;&gt;</span> <span class="n">price</span> <span class="o">&gt;&gt;</span> <span class="n">purchasePrice</span><span class="p">;</span>
+    <span class="n">data</span><span class="p">.</span><span class="n">revenue</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="n">price</span><span class="p">;</span>
+    <span class="n">data</span><span class="p">.</span><span class="n">profit</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="p">(</span><span class="n">price</span> <span class="o">-</span> <span class="n">purchasePrice</span><span class="p">);</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">data</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&gt;&gt;</span> <span class="n">data</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&gt;&gt;</span> <span class="n">price</span> <span class="o">&gt;&gt;</span> <span class="n">purchasePrice</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">data</span><span class="p">.</span><span class="n">revenue</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="n">price</span><span class="p">;</span>
+        <span class="n">data</span><span class="p">.</span><span class="n">profit</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="p">(</span><span class="n">price</span> <span class="o">-</span> <span class="n">purchasePrice</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">total</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">==</span> <span class="n">data</span><span class="p">.</span><span class="n">bookNo</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">+=</span> <span class="n">data</span><span class="p">.</span><span class="n">units_sold</span><span class="p">;</span>
+            <span class="n">total</span><span class="p">.</span><span class="n">revenue</span> <span class="o">+=</span> <span class="n">data</span><span class="p">.</span><span class="n">revenue</span><span class="p">;</span>
+            <span class="n">total</span><span class="p">.</span><span class="n">profit</span> <span class="o">+=</span> <span class="n">data</span><span class="p">.</span><span class="n">profit</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Data must refer to the same ISBN&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>
+              <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>
+              <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">revenue</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">revenue</span> <span class="o">/</span> <span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+    <span class="k">else</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;(no sales)&quot;</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">profit</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For exercise 1.23</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;Sales_data.h&quot;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">price</span><span class="p">{</span><span class="mf">0.0</span><span class="p">},</span> <span class="n">purchasePrice</span><span class="p">{</span><span class="mf">0.0</span><span class="p">};</span>
+    <span class="n">Sales_data</span> <span class="n">currData</span><span class="p">,</span> <span class="n">valData</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">currData</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&gt;&gt;</span> <span class="n">currData</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&gt;&gt;</span> <span class="n">price</span> <span class="o">&gt;&gt;</span> <span class="n">purchasePrice</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">currData</span><span class="p">.</span><span class="n">revenue</span> <span class="o">=</span> <span class="n">currData</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="n">price</span><span class="p">;</span>
+        <span class="n">currData</span><span class="p">.</span><span class="n">profit</span> <span class="o">=</span> <span class="n">currData</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="p">(</span><span class="n">price</span> <span class="o">-</span> <span class="n">purchasePrice</span><span class="p">);</span>
+        <span class="kt">unsigned</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">valData</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&gt;&gt;</span> <span class="n">valData</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&gt;&gt;</span> <span class="n">price</span> <span class="o">&gt;&gt;</span> <span class="n">purchasePrice</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">valData</span><span class="p">.</span><span class="n">revenue</span> <span class="o">=</span> <span class="n">valData</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="n">price</span><span class="p">;</span>
+            <span class="n">valData</span><span class="p">.</span><span class="n">profit</span> <span class="o">=</span> <span class="n">valData</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="p">(</span><span class="n">price</span> <span class="o">-</span> <span class="n">purchasePrice</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">currData</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">==</span> <span class="n">valData</span><span class="p">.</span><span class="n">bookNo</span><span class="p">)</span> <span class="p">{</span>
+                <span class="o">++</span><span class="n">cnt</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">currData</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; occurs &quot;</span>
+                          <span class="o">&lt;&lt;</span> <span class="n">cnt</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; times&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">currData</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; occurs &quot;</span>
+                  <span class="o">&lt;&lt;</span> <span class="n">cnt</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; times&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For exercise 1.25</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;Sales_data.h&quot;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">price</span><span class="p">{</span><span class="mf">0.0</span><span class="p">},</span> <span class="n">purchasePrice</span><span class="p">{</span><span class="mf">0.0</span><span class="p">};</span>
+    <span class="n">Sales_data</span> <span class="n">total</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">total</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&gt;&gt;</span> <span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&gt;&gt;</span> <span class="n">price</span> <span class="o">&gt;&gt;</span> <span class="n">purchasePrice</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">total</span><span class="p">.</span><span class="n">revenue</span> <span class="o">=</span> <span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="n">price</span><span class="p">;</span>
+        <span class="n">total</span><span class="p">.</span><span class="n">profit</span> <span class="o">=</span> <span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="p">(</span><span class="n">price</span> <span class="o">-</span> <span class="n">purchasePrice</span><span class="p">);</span>
+        <span class="n">Sales_data</span> <span class="n">trans</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">trans</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&gt;&gt;</span> <span class="n">trans</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&gt;&gt;</span> <span class="n">price</span> <span class="o">&gt;&gt;</span> <span class="n">purchasePrice</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">trans</span><span class="p">.</span><span class="n">revenue</span> <span class="o">=</span> <span class="n">trans</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="n">price</span><span class="p">;</span>
+            <span class="n">trans</span><span class="p">.</span><span class="n">profit</span> <span class="o">=</span> <span class="n">trans</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">*</span> <span class="p">(</span><span class="n">price</span> <span class="o">-</span> <span class="n">purchasePrice</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">total</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">==</span> <span class="n">trans</span><span class="p">.</span><span class="n">bookNo</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">+=</span> <span class="n">trans</span><span class="p">.</span><span class="n">units_sold</span><span class="p">;</span>
+                <span class="n">total</span><span class="p">.</span><span class="n">revenue</span> <span class="o">+=</span> <span class="n">trans</span><span class="p">.</span><span class="n">revenue</span><span class="p">;</span>
+                <span class="n">total</span><span class="p">.</span><span class="n">profit</span> <span class="o">+=</span> <span class="n">trans</span><span class="p">.</span><span class="n">profit</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>
+                          <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>
+                          <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">revenue</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+                    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">revenue</span> <span class="o">/</span> <span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+                <span class="k">else</span>
+                    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;(no sales)&quot;</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+
+                <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">profit</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">bookNo</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>
+                  <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span>
+                  <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">revenue</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">revenue</span> <span class="o">/</span> <span class="n">total</span><span class="p">.</span><span class="n">units_sold</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+        <span class="k">else</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;(no sales)&quot;</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">total</span><span class="p">.</span><span class="n">profit</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;No data?!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Chapter3.html" class="btn btn-neutral float-right" title="Chapter 3 Strings, Vectors, And Arrays" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Chapter1.html" class="btn btn-neutral float-left" title="Chapter 1 Getting started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Javious
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
